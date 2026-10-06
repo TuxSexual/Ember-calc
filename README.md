@@ -54,14 +54,14 @@
 | 60+ | Высокий |
 
 ## Структура проекта
-
-    ember-calc/
-          main.py          интерфейс, вопросы, вывод
-          calculator.py    логика расчёта
-          factors.py       веса факторов
-          tests.py         проверки
-          README.md
-
+~~~
+Ember-calc/
+├── main.py
+├── calculator.py
+├── factors.py
+├── tests.py
+└── README.md
+~~~
 ## Лицензия
 
-MIT
+MIT License, see more in LICENSE
