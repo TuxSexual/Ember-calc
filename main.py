@@ -10,27 +10,30 @@ def ask(question):
         except ValueError:
             print("Нужно число")
 def main():
-    print("Ember calc")
-    print("Отвечай по шкале")
+    print("~~~~~~~~~~~~~~~~~~~~~~~~")
+    print("EMBER CALC | Твое выгорание")
+    print("Отвечай 0-10")
+    print("~~~~~~~~~~~~~~~~~~~~~~~~")
     print()
 
     scores = {}
-    scores["workload"] = ask("Рабочая нагрузка")
-    scores["resilience"] = ask("Устойчивость")
-    scores["sleep_problems"] = ask("Проблемы со сном")
-    scores["social_contact"] = ask("Соц влияние")
-    scores["mood_pos"] = ask("Позитивные эмоции")
-    scores["mood_neg"] = ask("Негативные эмоции")
+    scores["workload"] = ask("Рабочая нагрузка \n 0 = свободен, 10 = завал")
+    scores["resilience"] = ask("Устойчивость \n 0 = совсем не справляюсь, 10 = легко")
+    scores["sleep_problems"] = ask("Проблемы со сном \n 0 = сплю отлично, 10 = почти не сплю")
+    scores["social_contact"] = ask("Поддержка близких \n 0 = совсем один, 10 = полная поддержка")
+    scores["mood_pos"] = ask("Позитивные эмоции \n 0 = почти не было, 10 = часто")
+    scores["mood_neg"] = ask("Негативные эмоции \n 0 = нет негатива, 10 = часто")
 
     percent, details = calc_risk(scores)
     level, advice = risk_lev(percent)
 
     print()
+    print("~~~~~~~~~~~~~~~~~~~~")
     print("Риск выгорания:", str(percent) + "%")
     print("Уровень:", level)
     print("Совет:", advice)
+    print("~~~~~~~~~~~~~~~~~~~~")
     print()
-
     print("Вклад факторов:")
     for name, val in sorted(details.items(), key = lambda x: -x[1]):
         print(" " + name + ": " + str(round(val, 3)))
